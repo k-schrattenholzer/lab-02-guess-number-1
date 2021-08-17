@@ -16,11 +16,19 @@ const highLow = document.getElementById('high-low');
 const guessesRemainingEl = document.getElementById('guesses-remaining');
 const winLose = document.getElementById('win-lose');
 
+function comparesNumbers(guess, correctNumber) {
+  if (guess > correctNumber) return 1;
+  if (guess < correctNumber) return -1;
+  if (guess === correctNumber) return 0;
+}
+
+
+
 
 guessButton.addEventListener('click', () => {
     guessesRemaining--;
     const numberValue = Number(numberInput.value);
-    console.log(numberValue)
+    
     if (numberValue > correctAnswer) {
       highLow.textContent = "Too high";
       guessesRemainingEl.textContent = `You have ${guessesRemaining} guesses remaining.`;
@@ -33,7 +41,7 @@ guessButton.addEventListener('click', () => {
       guessesRemainingEl.textContent = '';
       winLose.textContent = 'Congrats, you won!';
     }
-    if (guessesRemaining === 0) {
+    if (guessesRemaining === 0 && numberValue !== correctAnswer) {
       winLose.textContent = 'Aw man, you lost.'
     }
 
