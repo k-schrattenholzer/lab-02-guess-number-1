@@ -40,6 +40,10 @@ guessButton.addEventListener('click', () => {
     if (guessesRemaining === 0 && numberValue !== correctAnswer) {
       winLose.textContent = 'Aw man, you lost.'
     }
+    if (guessesRemaining === 0 || numberValue === correctAnswer) {
+      guessButton.disabled = true;
+      numberInput.disabled = true;
+    }
 
 })
 
