@@ -15,6 +15,7 @@ const guessButton = document.getElementById('guess-button');
 const highLow = document.getElementById('high-low');
 const guessesRemainingEl = document.getElementById('guesses-remaining');
 const winLose = document.getElementById('win-lose');
+const reloadButton = document.getElementById('reload-button');
 
 
 
@@ -47,3 +48,6 @@ guessButton.addEventListener('click', () => {
 
 })
 
+reloadButton.addEventListener('click', () => {
+  location.reload();
+})

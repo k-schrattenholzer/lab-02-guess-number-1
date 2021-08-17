@@ -115,3 +115,11 @@ footer {
   .rules {
       margin-bottom: 50px;
   }
+
+  .guess-button {
+      margin: 20px;
+  }
+
+  .reload-button {
+      margin: 20px;
+  }
