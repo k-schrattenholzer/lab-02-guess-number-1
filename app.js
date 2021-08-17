@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-
+import { comparesNumbers } from './utils.js';
 // initialize global state
 
 // set event listeners 
@@ -16,11 +16,7 @@ const highLow = document.getElementById('high-low');
 const guessesRemainingEl = document.getElementById('guesses-remaining');
 const winLose = document.getElementById('win-lose');
 
-function comparesNumbers(guess, correctNumber) {
-  if (guess > correctNumber) return 1;
-  if (guess < correctNumber) return -1;
-  if (guess === correctNumber) return 0;
-}
+
 
 
 
@@ -29,14 +25,14 @@ guessButton.addEventListener('click', () => {
     guessesRemaining--;
     const numberValue = Number(numberInput.value);
     
-    if (numberValue > correctAnswer) {
+    if (comparesNumbers(numberValue, correctAnswer) === 1) {
       highLow.textContent = "Too high";
       guessesRemainingEl.textContent = `You have ${guessesRemaining} guesses remaining.`;
     }
-    else if (numberValue < correctAnswer) {
+    else if (comparesNumbers(numberValue, correctAnswer) === -1) {
       highLow.textContent = "Too low";
       guessesRemainingEl.textContent = `You have ${guessesRemaining} guesses remaining.`;
-    } else {
+    } else if (comparesNumbers(numberValue, correctAnswer) === 0) {
       highLow.textContent = "Hey that's right!";
       guessesRemainingEl.textContent = '';
       winLose.textContent = 'Congrats, you won!';
