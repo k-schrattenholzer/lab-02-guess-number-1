@@ -27,27 +27,27 @@ guessButton.addEventListener('click', () => {
     const numberValue = Number(numberInput.value);
     
     if (comparesNumbers(numberValue, correctAnswer) === 1) {
-      highLow.textContent = "Too high";
-      guessesRemainingEl.textContent = `You have ${guessesRemaining} guesses remaining.`;
+        highLow.textContent = 'Too high';
+        guessesRemainingEl.textContent = `You have ${guessesRemaining} guesses remaining.`;
     }
     else if (comparesNumbers(numberValue, correctAnswer) === -1) {
-      highLow.textContent = "Too low";
-      guessesRemainingEl.textContent = `You have ${guessesRemaining} guesses remaining.`;
+        highLow.textContent = 'Too low';
+        guessesRemainingEl.textContent = `You have ${guessesRemaining} guesses remaining.`;
     } else if (comparesNumbers(numberValue, correctAnswer) === 0) {
-      highLow.textContent = "Hey that's right!";
-      guessesRemainingEl.textContent = '';
-      winLose.textContent = 'Congrats, you won!';
+        highLow.textContent = "Hey that's right!";
+        guessesRemainingEl.textContent = '';
+        winLose.textContent = 'Congrats, you won!';
     }
     if (guessesRemaining === 0 && numberValue !== correctAnswer) {
-      winLose.textContent = 'Aw man, you lost.'
+        winLose.textContent = 'Aw man, you lost.';
     }
     if (guessesRemaining === 0 || numberValue === correctAnswer) {
-      guessButton.disabled = true;
-      numberInput.disabled = true;
+        guessButton.disabled = true;
+        numberInput.disabled = true;
     }
 
-})
+});
 
 reloadButton.addEventListener('click', () => {
-  location.reload();
-})
+    location.reload();
+});
